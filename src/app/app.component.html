@@ -34,7 +34,7 @@
           *ngIf="form.controls.title.invalid && !form.controls.title.pristine"
           >Esse campo deve ter entre 3 e 60 caracteres!</small
         >
-        <button [disabled]="form.invalid">Salvar</button>
+        <button [disabled]="form.invalid" (click)="add()">Salvar</button>
       </fieldset>
     </form>
   </body>

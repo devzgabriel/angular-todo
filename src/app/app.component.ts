@@ -29,6 +29,18 @@ export class AppComponent {
     this.todos.push(new Todo(3, 'asaaas', true));
   }
 
+  add() {
+    const title = this.form.controls['title'].value;
+    // const {title} = this.form.value
+    const id = this.todos.length + 1;
+    this.todos.push(new Todo(id, title, false));
+    this.clear();
+  }
+
+  clear() {
+    this.form.reset();
+  }
+
   remove(todo: Todo) {
     const index = this.todos.indexOf(todo);
     if (index != -1) {
